@@ -33,7 +33,7 @@ In this design, we will implement a 4KB ROM. Since ROM is typically read-only, w
 4KB = 4096 Bytes = 4096 x 8 bits
 The address width for 4KB memory is 12 bits (2^12 = 4096).
 
-
+```
 module rom_memory (
     input wire clk,
     input wire write_enable,   // Signal to enable write operation
@@ -54,13 +54,14 @@ module rom_memory (
         data_out <= rom[address];
     end
 endmodule
+```
 
 Output: ![4k out](https://github.com/user-attachments/assets/4e632590-ae2d-47c4-8836-55f0e43ae714)
 
 
 
 Testbench for 4KB ROM Memory
-
+```
 `timescale 1ns / 1ps
 module rom_memory_tb;
  // Inputs
@@ -109,6 +110,7 @@ module rom_memory_tb;
                  $time, write_enable, address, data_in, data_out);
     end
 endmodule
+```
 
 Output: ![4k tb](https://github.com/user-attachments/assets/34e7ddbe-36ff-40a1-b78e-eb6a3d5d6630)
 
